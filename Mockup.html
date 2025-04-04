@@ -7,45 +7,65 @@
 </head>
 <body>
     <main class="main">
-        <div class="container">
-            <aside class="right-box">
-                <h1>Design Your Shirt</h1>
-                <section class="color-selection">
-                    <h2>Choose a Color</h2>
-                    <div class="colors">
-                        <button class="color-option" data-color="laurier-purple" id="laurier-purple"></button>
-                        <button class="color-option" data-color="white" id="white"></button>
-                        <button class="color-option" data-color="goose-grey" id="goose-grey"></button>
-                        <button class="color-option" data-color="golden-hawk-gold" id="golden-hawk-gold"></button>
-                    </div>
-                </section>
-                <section class="size-selection">
-                    <h2>Choose a Size</h2>
-                    <form id="size-form">
-                        <button type="button" class="size-option" data-size="XS">Xtra Small</button>
-                        <button type="button" class="size-option" data-size="S">Small</button>
-                        <button type="button" class="size-option" data-size="M">Medium</button>
-                        <button type="button" class="size-option" data-size="L">Large</button>
-                        <button type="button" class="size-option" data-size="XL">Xtra Large</button>
-                    </form>
-                </section>
-                <button id="download-design">Download Design</button>
-                <div class="function-container">
-                    <input type="file" id="upload-image" accept="image/png" />
-                </div>
-            </aside>
-            <section class="left-box">
-                <nav class="view-selection">
-                    <button class="view-option" data-view="front">Front</button>
-                    <button class="view-option" data-view="back">Back</button>
-          
-                </nav>
-                <div id="canvas-container">
-                    <canvas id="canvas" width="500" height="600"></canvas>
-                    <div id="dropzone">Drag and drop your design here!</div>
-                </div>
-            </section>
+        <div class="header">
+            <h1>Mockup Generator</h1>
+            <p>Got a design revved up and are curious how it would look on some golden hawk merch? Drag & drop your design, or click the grey box
+                to upload one, and play around with it! When your placement is finalized, you can download a copy, or send it straight to 
+                our custom order staff to inquire about designs!
+            <p>
         </div>
+        
+        <main class="mockup-main">
+            
+            <div class="container-main">
+                <aside class="right-box">
+                    
+                    <section class="color-selection">
+                        <h2>Choose a Color</h2>
+                        <div class="colors">
+                            <button class="color-option" data-color="laurier-purple" id="laurier-purple"></button>
+                            <button class="color-option" data-color="white" id="white"></button>
+                            <button class="color-option" data-color="goose-grey" id="goose-grey"></button>
+                            <button class="color-option" data-color="golden-hawk-gold" id="golden-hawk-gold"></button>
+                        </div>
+                    </section>
+                    <section class="size-selection">
+                        <h2>Choose a Size</h2>
+                        <form id="size-form">
+                            <button type="button" class="size-option" data-size="XS">Xtra Small</button>
+                            <button type="button" class="size-option" data-size="S">Small</button>
+                            <button type="button" class="size-option" data-size="M">Medium</button>
+                            <button type="button" class="size-option" data-size="L">Large</button>
+                            <button type="button" class="size-option" data-size="XL">Xtra Large</button>
+                        </form>
+                    </section>
+                    <button id="download-design">Download Design</button>
+                    <button id="download-design" class="inquire-button" href="custom-order-mock.html">Inquire about Design</button>
+                    <div class="function-container">
+                        
+                    </div>
+                </aside>
+                <section class="left-box">
+                    <nav class="view-selection">
+                        <button class="view-option" data-view="front">Front</button>
+                        <button class="view-option" data-view="back">Back</button>
+              
+                    </nav>
+                    <div id="canvas-container">
+                        <canvas id="canvas" width="500" height="600"></canvas>
+                        <div id="dropzone" class="dropzone">
+                          Drag and drop your design here or click to upload.
+                          <input type="file" id="upload-image" accept="image/png" style="display: none;">
+                        </div>
+                        
+                    </div>
+                    <button id="remove-design" style="display: none;">Remove Image</button>
+                    
+                      
+                </section>
+            </div>
+            
+        </main>
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.2.4/fabric.min.js"></script>
     <script src="Mockup.js"></script>
