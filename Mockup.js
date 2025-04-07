@@ -324,9 +324,58 @@ document.addEventListener("DOMContentLoaded", function () {
               selectedSize = button.dataset.size;
           });
       });
+      let selectedProduct = 'product1';
+      let selectedPrintingMethod = 'screen-print';
+
+      document.getElementById('product-select').addEventListener('change', function(e){
+        selectedPrintingMethod = e.target.value;
+        updatePrintingMethod(selectedPrintingMethod);
+      });
+      function updatePrintingMethod(method){
+        console.log("Selected printing method: ", method);
+      }
   
     
+   
+
+    document.getElementById('product-select').addEventListener('change', function(e) {
+        selectedProduct = e.target.value;
+        updateProductMockup(selectedProduct);
+
+    });
+    function updateProductMockup(product){
+        let bgImgSrc;
+        switch(product){
+            case 'product1':
+                bgImgSrc = '';
+                break;
+            case 'product2':
+                bgImgSrc = '';
+                break;
+            case 'product3':
+                bgImgSrc = '';
+                break;
+            default:
+                bgImgSrc = '';
+        }
+        fabric.Image.fromURL(bgImgSrc, function(bgImg) {
+            canvas.setBackgroundImage(bgImg, canvas.renderAll.bind(canvas), {
+                originX: 'left',
+                originY: 'top',
+                scaleX: canvas.width / bgImg.width,
+                scaleY: canvas.height / bgImg.height,
+            });
+        }, {crossOrigin: 'Anonymous'})
+    };
     
+    document.getElementById('printing-method').addEventListener('change', function(e) {
+        selectedPrintingMethod = e.target.value;
+        updatePrintingMethod(selectedPrintingMethod);
+    });
+
+    function updatePrintingMethod(method){
+        console.log("selected printing method:", method);
+    }
     
     
   });
